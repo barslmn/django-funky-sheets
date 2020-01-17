@@ -6,7 +6,9 @@
 <form id="form_hot" method="post" action="" onsubmit="return constructFormset();">
 
   {% csrf_token %}
-  {{ form }}
+  {{ if project_form }}
+    {{ project_form }}
+  {{ endif }}
   {{ formset.management_form }}
 
   {% if formset.errors %}{% endif %}
